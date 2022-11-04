@@ -1,6 +1,6 @@
 # URL shortener
 
-Short is fast and free URL shortener on the edge using Vercel Edge functions & globally deployed Upstash Redis instance.
+URL shortener is using Vercel Edge functions & globally deployed Upstash Redis instance.
 
 ## Run app dev server
 
