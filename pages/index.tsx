@@ -6,15 +6,15 @@ export default function Home() {
 
   const [value, setValue] = useState(" "); // Get value from the textbox.
 
-  const [shortUrl, setShortUrl] = useState<string>(null);
+  const [shortUrl, setShortUrl] = useState<string>();
   
   return(
 
-    <div><center>
-      <h2 style={{ margin: "100px" }}> Welcome to url shortener page! </h2>
+    <div style={{ margin: "100px", padding: "100px"}}>
+      <h2 > Welcome to url shortener page! </h2>
       {shortUrl ? (
         <div>
-          <a href={shortUrl}>{shortUrl}</a>
+          <a href={shortUrl} >{shortUrl}</a>
         </div>
       ):
       (
@@ -42,11 +42,11 @@ export default function Home() {
               }
             
         }}>
-          <input value = {value} onChange = {e => setValue(e.target.value)} style={{width: "500px", height: "50px"}} placeholder="Enter your url here .. " onclick="this.value=''"/>
+          <input value = {value} onChange = {e => setValue(e.target.value)} style={{width: "500px", height: "50px"}} />
           <button type = "submit" style={{width: "150px", height: "30px", margin: "3px"}} > <b> Click Here </b></button>
         </form> 
       )}
       
-      </center> </div>
+     </div>
   );
 }

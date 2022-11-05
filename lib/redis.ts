@@ -16,7 +16,7 @@ export async function setUrl(url: string) {
 
 
 // Get a long url from short url code.
-export async function getUrl(short: string): Promise <string>{
+export async function getUrl(short: string): Promise <any>{
   console.log("Function to get a long url for the given short url: ", short);
   const data = await redis.get(`${short}`);
   if (data){
@@ -29,7 +29,7 @@ export async function getUrl(short: string): Promise <string>{
 //const sleep = (ms) => new Promise(r => setTimeout(r, ms));
 
 //Get short url of length 8.
-export async function getShort(): string {
+export async function getShort(): Promise<any>  {
   console.log("Function to generate a eight chars code.");
 
   //Generate a code.
