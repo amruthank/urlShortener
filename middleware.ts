@@ -7,14 +7,19 @@ const redis = new Redis({
   })
 
 
+// Middleware used here to extract the original url.
 export async function middleware(req:NextRequest) {
+    console.log("Running middleware..");
+    
     const path = req.nextUrl.pathname.split("/")[1];
     
     if (["favicon.ico", "api", "_next", ""].includes(path)){
         return
     }
 
-    const url: any  = await redis.get(`short/${path}`) // short url redirect to original url.
+    // Short url will be redirected to the original url.
+    const url: any  = await redis.get(`${path}`) 
+    
     if (url){
         return NextResponse.redirect(url);
     }
